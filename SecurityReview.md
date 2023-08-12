@@ -1,4 +1,4 @@
-# Orb security review.md
+# Orb security review
 Commit fff3771b8788f0c60a65c73f779326a0305d3622
 
 ### issue
