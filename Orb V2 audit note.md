@@ -19,3 +19,20 @@ Recommended fix : The crux of this issue stems from the misalignment between har
 The contract uses unpinned solidity compiler ^0.8.20. 
 
 In order to avoid unexpected compiler behavior, consider pinning the solidity compiler version to 0.8.20.
+
+### 3. Unnecessary imports
+
+There are a couple of unnecessary imports in `OrbPondV2.sol`, e.g.
+
+- `UUPSUpgradeable` in line 6
+- `OwnableUpgradeable` in line 5
+
+Consider removing these.
+
+### 4. function `setOrbInitialVersion()` in `OrbPondV2` allows the same value to be set as `orbInitialVersion`
+
+This function checks if the give parameter `orbInitialVersion_` is not larger than the `latestVersion`. However it does not verify if it's the same value as the current state variable `orbInitialVersion`, which could lead to pollution of event logs.
+
+Consider adding a check to prevent same value be set as `orbInitialVersion`.
+
+
