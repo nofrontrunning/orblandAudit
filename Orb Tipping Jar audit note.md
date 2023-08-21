@@ -7,7 +7,7 @@ None.
 
 ### H1 Tips can be stolen
 
-The tipping jar distributes tips to the invoker of the associated suggestion. As the tips grow in size, it could be profitable for anyone to purchase the Orb and invoke the suggestion if the tip invoker portion size is close to the Orb's current price, then `relinquish` with auction to sell the Orb. A random account with no interest in the Orb could simply front run the `claimTipsForInvocation` function with purchasing the Orb + invoke suggestion + claim tips to steal all tips from the current keeper. 
+The tipping jar distributes tips to the invoker of the associated suggestion. As the tips grow in size, it could be profitable for anyone to purchase the Orb and invoke the suggestion if the tip invoker portion size is close to the Orb's current price, then `relinquish` with auction to sell the Orb. A random account with no interest in the Orb could simply monitoring the tip amount and front run the invoke function with purchasing the Orb + invoke suggestion + claim tips to steal all tips from the current keeper. 
 
 This could further escalate into a honey pot situation and cause a chaotic MEV war speculating on the Orb's short-term keepership for profit leading to frequent change-hands of the Orb and unnecessary auctions instead of using the Orb in the designed way, which could lead to a frustrating experience for the parties involved. 
 
